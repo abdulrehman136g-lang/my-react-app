@@ -2,492 +2,524 @@ import { useState } from "react";
 
 const products = [
   {
-    id: 1,
-    name: "Running Shoes",
-    category: "Shoes",
-    price: 59,
-    rating: 4.8,
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+    name: "Modern Sofa",
+    category: "Sofa",
+    price: "$499",
+    rating: "4.9",
+    image:
+      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: 2,
-    name: "Smart Watch",
-    category: "Electronics",
-    price: 99,
-    rating: 4.7,
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
+    name: "Luxury Chair",
+    category: "Chair",
+    price: "$249",
+    rating: "4.8",
+    image:
+      "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: 3,
-    name: "Headphones",
-    category: "Electronics",
-    price: 79,
-    rating: 4.9,
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+    name: "Wooden Coffee Table",
+    category: "Table",
+    price: "$189",
+    rating: "4.7",
+    image:
+      "https://images.unsplash.com/photo-1532372320572-cda25653a26d?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: 4,
-    name: "Classic T-Shirt",
-    category: "Clothing",
-    price: 29,
-    rating: 4.5,
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
+    name: "Modern Bed",
+    category: "Bedroom",
+    price: "$699",
+    rating: "4.9",
+    image:
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: 5,
-    name: "Backpack",
-    category: "Accessories",
-    price: 45,
-    rating: 4.6,
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62",
+    name: "Comfort Sofa",
+    category: "Sofa",
+    price: "$579",
+    rating: "4.8",
+    image:
+      "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: 6,
-    name: "Sunglasses",
-    category: "Accessories",
-    price: 35,
-    rating: 4.4,
-    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083",
+    name: "Classic Armchair",
+    category: "Chair",
+    price: "$299",
+    rating: "4.6",
+    image:
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: 7,
-    name: "White Sneakers",
-    category: "Shoes",
-    price: 65,
-    rating: 4.8,
-    image: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3",
+    name: "Dining Table",
+    category: "Table",
+    price: "$399",
+    rating: "4.8",
+    image:
+      "https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: 8,
-    name: "Denim Jacket",
-    category: "Clothing",
-    price: 89,
-    rating: 4.7,
-    image: "https://images.unsplash.com/photo-1551028719-00167b16eac5",
-  },
-  {
-    id: 9,
-    name: "Laptop",
-    category: "Electronics",
-    price: 899,
-    rating: 4.9,
-    image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
-  },
-  {
-    id: 10,
-    name: "Leather Wallet",
-    category: "Accessories",
-    price: 39,
-    rating: 4.3,
-    image: "https://images.unsplash.com/photo-1627123424574-724758594e93",
-  },
-  {
-    id: 11,
-    name: "Sports Shoes",
-    category: "Shoes",
-    price: 72,
-    rating: 4.6,
-    image: "https://images.unsplash.com/photo-1549298916-b41d501d3772",
-  },
-  {
-    id: 12,
-    name: "Hoodie",
-    category: "Clothing",
-    price: 55,
-    rating: 4.8,
-    image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7",
-  },
-  {
-    id: 13,
-    name: "Wireless Earbuds",
-    category: "Electronics",
-    price: 69,
-    rating: 4.7,
-    image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df",
-  },
-  {
-    id: 14,
-    name: "Cap",
-    category: "Accessories",
-    price: 22,
-    rating: 4.2,
-    image: "https://images.unsplash.com/photo-1521369909029-2afed882baee",
-  },
-  {
-    id: 15,
-    name: "Basketball Shoes",
-    category: "Shoes",
-    price: 95,
-    rating: 4.9,
-    image: "https://images.unsplash.com/photo-1552346154-21d32810aba3",
-  },
-  {
-    id: 16,
-    name: "Casual Shirt",
-    category: "Clothing",
-    price: 42,
-    rating: 4.5,
-    image: "https://images.unsplash.com/photo-1603252110481-7ba873bf42ab",
-  },
-  {
-    id: 17,
-    name: "Tablet",
-    category: "Electronics",
-    price: 399,
-    rating: 4.8,
-    image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0",
-  },
-  {
-    id: 18,
-    name: "Travel Bag",
-    category: "Accessories",
-    price: 68,
-    rating: 4.6,
-    image: "https://images.unsplash.com/photo-1556306535-38febf6782e7",
-  },
-  {
-    id: 19,
-    name: "Boots",
-    category: "Shoes",
-    price: 110,
-    rating: 4.7,
-    image: "https://images.unsplash.com/photo-1520639888713-7851133b1ed0",
-  },
-  {
-    id: 20,
-    name: "Jeans",
-    category: "Clothing",
-    price: 49,
-    rating: 4.5,
-    image: "https://images.unsplash.com/photo-1542272604-787c3835535d",
-  },
-  {
-    id: 21,
-    name: "Camera",
-    category: "Electronics",
-    price: 699,
-    rating: 4.9,
-    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32",
-  },
-  {
-    id: 22,
-    name: "Leather Belt",
-    category: "Accessories",
-    price: 32,
-    rating: 4.4,
-    image: "https://images.unsplash.com/photo-1624222247344-550fb60583dc",
-  },
-  {
-    id: 23,
-    name: "Hiking Shoes",
-    category: "Shoes",
-    price: 85,
-    rating: 4.8,
-    image: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2",
-  },
-  {
-    id: 24,
-    name: "Sweater",
-    category: "Clothing",
-    price: 58,
-    rating: 4.6,
-    image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27",
-  },
-  {
-    id: 25,
-    name: "Bluetooth Speaker",
-    category: "Electronics",
-    price: 75,
-    rating: 4.7,
-    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1",
-  },
-  {
-    id: 26,
-    name: "Handbag",
-    category: "Accessories",
-    price: 95,
-    rating: 4.8,
-    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3",
-  },
-  {
-    id: 27,
-    name: "Slip-On Shoes",
-    category: "Shoes",
-    price: 54,
-    rating: 4.3,
-    image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77",
-  },
-  {
-    id: 28,
-    name: "Polo Shirt",
-    category: "Clothing",
-    price: 38,
-    rating: 4.5,
-    image: "https://images.unsplash.com/photo-1625910513413-5fc45b8d6a2b",
-  },
-  {
-    id: 29,
-    name: "Gaming Keyboard",
-    category: "Electronics",
-    price: 89,
-    rating: 4.9,
-    image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3",
-  },
-  {
-    id: 30,
-    name: "Wrist Watch",
-    category: "Accessories",
-    price: 125,
-    rating: 4.7,
-    image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d",
-  },
-  {
-    id: 31,
-    name: "Football Shoes",
-    category: "Shoes",
-    price: 88,
-    rating: 4.6,
-    image: "https://images.unsplash.com/photo-1511886929837-354d827aae26",
-  },
-  {
-    id: 32,
-    name: "Black Jacket",
-    category: "Clothing",
-    price: 105,
-    rating: 4.8,
-    image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a",
-  },
-  {
-    id: 33,
-    name: "Smartphone",
-    category: "Electronics",
-    price: 599,
-    rating: 4.9,
-    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
-  },
-  {
-    id: 34,
-    name: "Travel Backpack",
-    category: "Accessories",
-    price: 72,
-    rating: 4.6,
-    image: "https://images.unsplash.com/photo-1551632811-561732d1e306",
-  },
-  {
-    id: 35,
-    name: "Canvas Shoes",
-    category: "Shoes",
-    price: 48,
-    rating: 4.4,
-    image: "https://images.unsplash.com/photo-1520256862855-398228c41684",
-  },
-  {
-    id: 36,
-    name: "Summer Dress",
-    category: "Clothing",
-    price: 64,
-    rating: 4.7,
-    image: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446",
-  },
-  {
-    id: 37,
-    name: "Computer Mouse",
-    category: "Electronics",
-    price: 35,
-    rating: 4.5,
-    image: "https://images.unsplash.com/photo-1527814050087-3793815479db",
-  },
-  {
-    id: 38,
-    name: "Black Backpack",
-    category: "Accessories",
-    price: 59,
-    rating: 4.8,
-    image: "https://images.unsplash.com/photo-1491637639811-60e2756cc1c7",
-  },
-  {
-    id: 39,
-    name: "Running Sneakers",
-    category: "Shoes",
-    price: 76,
-    rating: 4.9,
-    image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519",
-  },
-  {
-    id: 40,
-    name: "Casual Hoodie",
-    category: "Clothing",
-    price: 62,
-    rating: 4.6,
-    image: "https://images.unsplash.com/photo-1509942774463-acf339cf87d5",
+    name: "King Size Bed",
+    category: "Bedroom",
+    price: "$799",
+    rating: "4.9",
+    image:
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
 function App() {
-  const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
-  const [cart, setCart] = useState([]);
+  const [priceSort, setPriceSort] = useState("default");
 
-  const categories = [
-    "All",
-    ...new Set(products.map((product) => product.category)),
-  ];
+  // CATEGORY FILTER
+  const categoryProducts =
+    category === "All"
+      ? products
+      : products.filter((product) => product.category === category);
 
-  const filteredProducts = products.filter((product) => {
-    const searchMatch = product.name
-      .toLowerCase()
-      .includes(search.toLowerCase());
+  // PRICE SORTING
+  const filteredProducts = [...categoryProducts].sort((a, b) => {
+    const priceA = parseInt(a.price.replace("$", ""));
+    const priceB = parseInt(b.price.replace("$", ""));
 
-    const categoryMatch =
-      category === "All" || product.category === category;
+    if (priceSort === "low") {
+      return priceA - priceB;
+    }
 
-    return searchMatch && categoryMatch;
+    if (priceSort === "high") {
+      return priceB - priceA;
+    }
+
+    return 0;
   });
 
-  function addToCart(product) {
-    setCart([...cart, product]);
-  }
-
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-[#f7f5f0] text-stone-900">
 
-      {/* Header */}
-      <header className="sticky top-0 z-20 bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col md:flex-row gap-4 justify-between items-center">
+      {/* NAVBAR */}
+      <nav className="sticky top-0 z-50 border-b border-stone-200 bg-[#f7f5f0]/95 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
 
-          <h1 className="text-3xl font-bold text-gray-800">
-            My Store
+          <h1 className="text-2xl font-bold">
+            Furni<span className="text-amber-700">Co.</span>
           </h1>
 
-          <button className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition">
-            🛒 Cart ({cart.length})
-          </button>
+          <div className="hidden gap-8 md:flex">
+            <a href="#home" className="hover:text-amber-700">
+              Home
+            </a>
+
+            <a href="#shop" className="hover:text-amber-700">
+              Shop
+            </a>
+
+            <a href="#about" className="hover:text-amber-700">
+              About
+            </a>
+
+            <a href="#contact" className="hover:text-amber-700">
+              Contact
+            </a>
+          </div>
+
+          <a
+            href="#shop"
+            className="rounded-full bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700"
+          >
+            Shop Now
+          </a>
 
         </div>
-      </header>
+      </nav>
 
-      {/* Main */}
-      <main className="max-w-7xl mx-auto px-4 py-10">
 
-        <h2 className="text-4xl font-bold text-center text-gray-800">
-          Our Products
-        </h2>
+      {/* HERO */}
+      <section id="home">
 
-        <p className="text-center text-gray-500 mt-2 mb-8">
-          Choose your favorite product
-        </p>
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 md:grid-cols-2 md:py-24">
 
-        {/* Search */}
-        <div className="max-w-2xl mx-auto mb-8">
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="🔎 Search products..."
-            className="w-full bg-white border border-gray-300 rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
-          />
-        </div>
+          <div>
 
-        {/* Categories */}
-        <div className="flex flex-wrap justify-center gap-3 mb-8">
+            <p className="font-semibold uppercase tracking-[4px] text-amber-700">
+              Modern Furniture
+            </p>
 
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setCategory(cat)}
-              className={`px-5 py-2 rounded-lg font-semibold transition ${
-                category === cat
-                  ? "bg-blue-600 text-white"
-                  : "bg-white text-gray-700 hover:bg-blue-100"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+            <h2 className="mt-4 text-5xl font-bold leading-tight md:text-7xl">
+              Make Your
+              <br />
+              Home <span className="text-amber-700">Beautiful.</span>
+            </h2>
 
-        </div>
+            <p className="mt-6 max-w-lg text-lg leading-8 text-stone-600">
+              Discover beautiful furniture designed to make your home
+              comfortable, stylish and modern.
+            </p>
 
-        {/* Product Count */}
-        <div className="mb-6 text-gray-600">
-          Showing{" "}
-          <span className="font-bold">
-            {filteredProducts.length}
-          </span>{" "}
-          products
-        </div>
+            <div className="mt-8 flex flex-wrap gap-4">
 
-        {/* Product Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <a
+                href="#shop"
+                className="rounded-full bg-blue-600 px-7 py-4 font-semibold text-white hover:bg-blue-700"
+              >
+                Explore Collection →
+              </a>
 
-          {filteredProducts.map((product) => (
-            <div
-              key={product.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
-            >
+              <a
+                href="#about"
+                className="rounded-full border border-stone-300 px-7 py-4 font-semibold hover:border-blue-600 hover:text-blue-600"
+              >
+                Learn More
+              </a>
 
-              {/* Product Image */}
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-56 object-cover"
-              />
+            </div>
 
-              <div className="p-5">
+            <div className="mt-10 flex gap-12">
 
-                {/* Category */}
-                <p className="text-sm text-blue-600 font-semibold">
-                  {product.category}
+              <div>
+                <p className="text-3xl font-bold">10K+</p>
+                <p className="text-sm text-stone-500">
+                  Happy Customers
                 </p>
+              </div>
 
-                {/* Name */}
-                <h3 className="text-xl font-bold text-gray-800 mt-1">
-                  {product.name}
-                </h3>
+              <div>
+                <p className="text-3xl font-bold">4.9</p>
+                <p className="text-sm text-stone-500">
+                  Customer Rating ⭐
+                </p>
+              </div>
 
-                {/* Rating */}
-                <div className="flex items-center gap-2 mt-3">
-                  <span className="text-yellow-400 text-lg">
-                    ★★★★★
-                  </span>
+            </div>
 
-                  <span className="text-gray-600 font-semibold">
-                    {product.rating}
-                  </span>
+          </div>
+
+
+          <div>
+
+            <img
+              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80"
+              alt="Modern furniture"
+              className="h-[500px] w-full rounded-[35px] object-cover shadow-2xl md:h-[600px]"
+            />
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* CATEGORIES */}
+      <section className="bg-white py-20">
+
+        <div className="mx-auto max-w-7xl px-6">
+
+          <p className="font-semibold uppercase tracking-[3px] text-amber-700">
+            Categories
+          </p>
+
+          <h2 className="mt-2 text-4xl font-bold">
+            Shop By Category
+          </h2>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+            {[
+              ["🛋️", "Sofas", "Sofa"],
+              ["🪑", "Chairs", "Chair"],
+              ["🛏️", "Bedroom", "Bedroom"],
+              ["🪵", "Tables", "Table"],
+            ].map(([icon, title, value]) => (
+
+              <button
+                key={title}
+                onClick={() => {
+                  setCategory(value);
+
+                  document
+                    .getElementById("shop")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="rounded-3xl bg-[#f7f5f0] p-8 text-left transition hover:-translate-y-2 hover:shadow-xl"
+              >
+
+                <div className="text-5xl">
+                  {icon}
                 </div>
 
-                {/* Price */}
-                <p className="text-2xl font-bold text-gray-800 mt-4">
-                  ${product.price}
+                <h3 className="mt-6 text-xl font-bold">
+                  {title}
+                </h3>
+
+                <p className="mt-2 text-sm text-stone-500">
+                  Explore collection →
                 </p>
 
-                {/* Add Cart Button */}
+              </button>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* PRODUCTS */}
+      <section id="shop" className="py-20">
+
+        <div className="mx-auto max-w-7xl px-6">
+
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+
+            <div>
+
+              <p className="font-semibold uppercase tracking-[3px] text-amber-700">
+                Our Collection
+              </p>
+
+              <h2 className="mt-2 text-4xl font-bold">
+                Featured Furniture
+              </h2>
+
+              <p className="mt-2 text-stone-500">
+                {filteredProducts.length} products found
+              </p>
+
+            </div>
+
+
+            {/* FILTERS */}
+            <div>
+
+              {/* CATEGORY BUTTONS */}
+              <div className="flex flex-wrap gap-2">
+
+                {[
+                  "All",
+                  "Sofa",
+                  "Chair",
+                  "Table",
+                  "Bedroom",
+                ].map((item) => (
+
+                  <button
+                    key={item}
+                    onClick={() => setCategory(item)}
+                    className={
+                      "rounded-full px-5 py-2.5 font-semibold " +
+                      (category === item
+                        ? "bg-blue-600 text-white"
+                        : "bg-white hover:bg-blue-100")
+                    }
+                  >
+                    {item}
+                  </button>
+
+                ))}
+
+              </div>
+
+
+              {/* PRICE SORT */}
+              <div className="mt-4 flex flex-wrap gap-2">
+
                 <button
-                  onClick={() => addToCart(product)}
-                  className="w-full mt-4 bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 hover:scale-105 transition-all duration-200"
+                  onClick={() => setPriceSort("low")}
+                  className={
+                    "rounded-full px-5 py-2.5 font-semibold " +
+                    (priceSort === "low"
+                      ? "bg-blue-600 text-white"
+                      : "bg-white hover:bg-blue-100")
+                  }
                 >
-                  🛒 Add to Cart
+                  Price: Low → High
+                </button>
+
+
+                <button
+                  onClick={() => setPriceSort("high")}
+                  className={
+                    "rounded-full px-5 py-2.5 font-semibold " +
+                    (priceSort === "high"
+                      ? "bg-blue-600 text-white"
+                      : "bg-white hover:bg-blue-100")
+                  }
+                >
+                  Price: High → Low
+                </button>
+
+
+                <button
+                  onClick={() => setPriceSort("default")}
+                  className={
+                    "rounded-full px-5 py-2.5 font-semibold " +
+                    (priceSort === "default"
+                      ? "bg-blue-600 text-white"
+                      : "bg-white hover:bg-blue-100")
+                  }
+                >
+                  Default
                 </button>
 
               </div>
+
             </div>
-          ))}
+
+          </div>
+
+
+          {/* PRODUCT CARDS */}
+
+          <div className="mt-10 grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+
+            {filteredProducts.map((product) => (
+
+              <div
+                key={product.name}
+                className="group overflow-hidden rounded-3xl bg-white shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
+              >
+
+                <div className="relative overflow-hidden">
+
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="h-64 w-full object-cover transition duration-500 group-hover:scale-110"
+                  />
+
+                  <span className="absolute left-4 top-4 rounded-full bg-white px-3 py-1 text-xs font-bold">
+                    NEW
+                  </span>
+
+                </div>
+
+
+                <div className="p-5">
+
+                  <p className="text-xs font-bold uppercase tracking-wider text-amber-700">
+                    {product.category}
+                  </p>
+
+                  <h3 className="mt-2 text-lg font-bold">
+                    {product.name}
+                  </h3>
+
+
+                  <div className="mt-3 flex items-center justify-between">
+
+                    <p className="text-xl font-bold">
+                      {product.price}
+                    </p>
+
+                    <p className="text-sm">
+                      ⭐ {product.rating}
+                    </p>
+
+                  </div>
+
+
+                  <button className="mt-5 w-full rounded-full bg-blue-600 py-3 font-semibold text-white hover:bg-blue-700">
+                    Add to Cart
+                  </button>
+
+                </div>
+
+              </div>
+
+            ))}
+
+          </div>
 
         </div>
 
-        {/* No Products */}
-        {filteredProducts.length === 0 && (
-          <div className="text-center py-20">
-            <h3 className="text-2xl font-bold text-gray-700">
-              No products found
-            </h3>
+      </section>
 
-            <p className="text-gray-500 mt-2">
-              Try another product name.
+
+      {/* ABOUT */}
+      <section
+        id="about"
+        className="bg-stone-900 py-24 text-white"
+      >
+
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-2">
+
+          <img
+            src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80"
+            alt="Furniture interior"
+            className="h-[450px] w-full rounded-[30px] object-cover"
+          />
+
+          <div>
+
+            <p className="font-semibold uppercase tracking-[3px] text-amber-400">
+              About FurniCo.
             </p>
-          </div>
-        )}
 
-      </main>
+            <h2 className="mt-4 text-4xl font-bold md:text-5xl">
+              Furniture made for the way you live.
+            </h2>
+
+            <p className="mt-6 leading-8 text-stone-300">
+              We believe furniture should be beautiful, comfortable
+              and functional. Our collection combines modern design
+              with timeless style.
+            </p>
+
+            <button className="mt-8 rounded-full bg-blue-600 px-7 py-4 font-semibold hover:bg-blue-700">
+              Discover Our Story →
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* CONTACT */}
+      <section
+        id="contact"
+        className="bg-blue-600 px-6 py-24 text-center text-white"
+      >
+
+        <h2 className="text-4xl font-bold md:text-5xl">
+          Transform Your Space Today
+        </h2>
+
+        <p className="mx-auto mt-5 max-w-xl text-blue-100">
+          Find furniture that matches your style and turns your
+          house into a beautiful home.
+        </p>
+
+        <a
+          href="#shop"
+          className="mt-8 inline-block rounded-full bg-white px-8 py-4 font-bold text-stone-900 hover:bg-stone-100"
+        >
+          Shop Collection →
+        </a>
+
+      </section>
+
+
+      {/* FOOTER */}
+      <footer className="bg-stone-950 px-6 py-10 text-white">
+
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-5 md:flex-row md:items-center">
+
+          <h2 className="text-2xl font-bold">
+            Furni<span className="text-blue-500">Co.</span>
+          </h2>
+
+          <p className="text-sm text-stone-400">
+            © 2026 FurniCo. All rights reserved.
+          </p>
+
+        </div>
+
+      </footer>
+
     </div>
   );
 }
